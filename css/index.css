@@ -1,0 +1,94 @@
+/*
+*
+* @Author: ¸ß»Ô
+* @Date:   2017-04-01 09:31:28
+* @Last Modified by:   高辉
+* @Last Modified time: 2017-04-01 10:26:17
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html body {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.content {
+    background: pink;
+    display: inline-block;
+    padding: 20px 40px;
+    vertical-align: middle;
+    margin: 50px auto;
+}
+
+.content h3 {
+    height: 35px;
+    text-align: center;
+}
+
+.content .main input {
+    outline: 0 none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    text-indent: 10px;
+}
+
+.content .warn {
+    padding-top: 5px;
+    height: 15px;
+}
+
+.content .warn span {
+    color: red;
+}
+
+.content #btn {
+    background: hotpink;
+    outline: 0 none;
+    border: 1px solid red;
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.content #btn:hover {
+    background: pink;
+}
+
+.content .l {
+    float: left;
+}
+
+.content .r {
+    float: right;
+}
+
+.content .r input {
+    outline: 0 none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    text-indent: 10px;
+}
+
+.clearfix {
+    overflow: hidden;
+}
+
+h6 {
+    margin-top: 10px
+}
+
+.bottom {
+    margin-top: 20px;
+}

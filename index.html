@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>版本号比较</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+    <div class="content">
+        <h3>请输入版本号</h3>
+        <div class="main">
+            <div>
+                版本号version1:
+                <input type="text" id="inp1" placeholder="提示:1.1.2.1">
+            </div>
+            <div>
+                版本号version2:
+                <input type="text" id="inp2" placeholder="提示:0.1.1">
+            </div>
+        </div>
+        <div class="warn">
+            <span id="warn">版本号输入不合法,请重新输入</span>
+        </div>
+        <br>
+        <div class="clearfix">
+            <input type="button" value="test" id="btn" class="l">
+            <span class="r"><input type="text" placeholder="比较的结果" id="result"></span>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/versionCompare.js"></script>
+<script type="text/javascript">
+//在默认情况下,隐藏提示信息,当获取到的输入值不符合条件时,显示提示信息
+var warn = $("#warn");
+warn.hide();
+$("#btn").click(function() {
+
+    //获取输入的版本号
+    var v1 = $("#inp1").val();
+    var v2 = $("#inp2").val();
+    /**
+    对文本框中输入的内容加以约束
+        1. 输入的值不能为空
+        2. 输入的值由数字和小数点组成,并且第一位必须是数字,最后一位也必须是数字
+            - 在以0开头的情况下,进行特殊的处理
+    */
+    var reg = /(^([1-9]+\.{0,1})+[0-9]+$)|(^[0-9]{1}$)|(^0\.[0-9]+(\.{0,1}[0-9]+)?$)/;
+    var reg1 = reg.test(v1);
+    var reg2 = reg.test(v2);
+    if ((!v1 || !v2) || (!reg1 || !reg2)) {
+        warn.show();
+        $("#inp1").val("");
+        $("#inp2").val("");
+        return;
+    }
+
+    //当输入的版本号满足条件时,进行版本号的比较
+    else {
+        warn.hide();
+        var result = versionCompare(v1, v2);
+        $("#result").val(result);
+
+    }
+})
+</script>
